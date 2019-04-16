@@ -1,5 +1,18 @@
 # moviehat
 
+pick and play movies
+
+
+## vuetify 
+
+### icons
+https://material.io/tools/icons/
+
+### docs
+https://vuetifyjs.com/en/components/icons
+
+
+
 ## Project setup
 ```
 npm install

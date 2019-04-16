@@ -1,0 +1,11 @@
+
+body {
+    /* margin: 0; */
+    background: purple;
+}
+
+.flexer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
