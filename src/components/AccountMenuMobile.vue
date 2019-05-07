@@ -8,9 +8,9 @@
         </div>
 
         <div class="menuOptions">
-            <router-link to="/Login">Profile</router-link>
-            <router-link to="/Login">Settings</router-link>
-            <router-link to="/Login">Sign out</router-link>
+            <router-link to="/login">Profile</router-link>
+            <router-link to="/login">Settings</router-link>
+            <router-link to="/login">Sign out</router-link>
         </div>
         
         <div class="foot">
@@ -55,8 +55,8 @@ export default {
 <style scoped>
 
 .profilePicture {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     margin: 10px auto;
 

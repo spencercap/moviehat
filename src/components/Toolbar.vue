@@ -4,6 +4,10 @@
         <div class="menuCircle left" :class="{ active: MenuMobileActive }"></div>
         <div class="menuCircle right" :class="{ active: AccountMenuMobileActive }"></div>
 
+        <!-- <div class="menuCircleContainer right" :class="{ active: AccountMenuMobileActive }">
+            <div class="circle"></div>
+        </div> -->
+
         <transition name="fade">
             <AccountMenuMobile v-if="AccountMenuMobileActive"/>
         </transition>
@@ -104,7 +108,7 @@ export default {
     --toolbar-height: 56px;
     
     position: fixed;
-    width: 100%;
+    width: 100vw;
     /* height: 100%; */
     top: var(--toolbar-height);
     height: calc( 100% - var(--toolbar-height) );
@@ -126,6 +130,7 @@ export default {
     width: 380px;
     max-width: 100%;
     padding: 10px;
+    padding-bottom: 2em;
 }
 
 .menuOptions > * {
@@ -142,19 +147,49 @@ export default {
     opacity: 0.7;
 }
 
-.menuCircle {
+
+.menuCircleContainer {
+    width: 36px;
+    height: 36px;
+    margin: 10px;
+
     position: absolute;
     top: 0;
-    width: 0px;
-    height: 0px;
+    /* width: 0px;
+    height: 0px; */
     background: transparent;
+    
+    
+    transition: transform 200ms ease-in-out, width 200ms ease-in-out, height 200ms ease-in-out;
+}
+.menuCircleContainer.right {
+    right: 0;
+}
+.menuCircleContainer > .circle {
+    background: #4d4d4d;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     box-shadow: inset -1px -1px 6px rgba(0, 0, 0, 0.5);
     opacity: 0.6;
-    transition: transform 200ms ease-in-out, width 200ms ease-in-out, height 200ms ease-in-out;
+}
+
+.menuCircle {
+    position: fixed;
+    top: 0;
+    /* width: 0px;
+    height: 0px; */
+    width: 230px;
+    height: 230px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: none;
+    opacity: 0.6;
+    transition: background 300ms ease-in-out, transform 200ms ease-in-out, width 200ms ease-in-out, height 200ms ease-in-out, box-shadow 400ms ease-in-out;
 }
 .menuCircle.active {
     background: #4d4d4d;
+    box-shadow: inset -1px -1px 6px rgba(0, 0, 0, 0.5);
     width: 230px;
     height: 230px;
 }
@@ -165,6 +200,7 @@ export default {
 .menuCircle.right {
     right: 0;
     transform: translate(50%, -50%);
+    /* transform: translate( calc(100vw - 50% ), -50%); */
 }
 
 

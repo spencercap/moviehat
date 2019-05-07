@@ -4,10 +4,10 @@
         <input class="searchField" type="text" placeholder="Search">
 
         <div class="menuOptions">
-            <router-link to="/Genius">Genius</router-link>
+            <router-link to="/genius">Genius</router-link>
             <div class="option">Watchlists</div>
-            <router-link to="/Home">Community</router-link>
-            <router-link to="/Home">Discover</router-link>
+            <router-link to="/home">Community</router-link>
+            <router-link to="/home">Discover</router-link>
         </div>
         
         <div class="foot">

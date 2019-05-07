@@ -1,6 +1,6 @@
 <template>
-    <v-app>
-        <Toolbar :NavTitle="inNavTitle" />
+    <v-app class="two" :style="{ height: actualHeight + 'px' }">
+        <Toolbar :NavTitle="inNavTitle"/>
         
 
         <v-content>
@@ -24,11 +24,23 @@ export default {
     data () { return {
         inNavTitle: 'Home',
         menuOpen: false,
+        actualHeight: Number,
     }},
     created() {
         this.$bus.$on('menuOpen', bool => {
             this.menuOpen = bool;
         });
+
+    },
+    mounted() {
+        
+        this.actualHeight = window.innerHeight;
+        this.$bus.actualHeight = window.innerHeight;
+        window.addEventListener('resize', () => {
+            this.actualHeight = window.innerHeight;
+            this.$bus.actualHeight = window.innerHeight;
+        });
+
     },
     watch: {
         '$route' () {
@@ -40,6 +52,10 @@ export default {
 
 
 <style>
+
+.application {
+    overflow: hidden;
+}
 
 .testbutton {
     width: 20px; 
