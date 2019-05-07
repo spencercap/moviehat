@@ -2,7 +2,7 @@
     <header class="flexer">
 
         <div class="flexer left">
-            <div class="icon menu"></div>
+            <div class="icon menu" @click="toggleMenu()"></div>
             <span class="navItem current">{{ NavTitle }}</span>
         </div>
 
@@ -23,9 +23,16 @@ export default {
     props: {
         
     },
+
     data() { return {
         NavTitle: 'Genius',
     }},
+
+    methods: {
+        toggleMenu() {
+            console.log('toggling menu');
+        },
+    }
 
 };
 </script>
