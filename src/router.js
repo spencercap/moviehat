@@ -19,6 +19,7 @@ const router = new Router({
             component: () => import('./views/Home.vue'),
             meta: {
                 title: 'Home – Movie Hat',
+                NavTitle: 'Home',
             }
         },
         {
@@ -26,13 +27,15 @@ const router = new Router({
             component: () => import('./views/Login.vue'),
             meta: {
                 title: 'Movie Hat Login',
+                NavTitle: 'Login',
             }
         },
         {
             path: '/about',
             meta: {
                 title: 'About Movie Hat',
-                requiresAuth: true
+                NavTitle: 'About',
+                // requiresAuth: true
             },
             component: () => import('./views/About.vue'),
         },
@@ -40,6 +43,7 @@ const router = new Router({
             path: '/genius',
             meta: {
                 title: 'Movie Hat Genius',
+                NavTitle: 'Genius',
                 // requiresAuth: true
             },
             component: () => import('./views/Genius.vue'),

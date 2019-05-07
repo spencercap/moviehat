@@ -1,48 +1,39 @@
 <template>
     <v-app>
-        <Toolbar/>
-
-        <!-- <MenuMobile/> -->
-        <!-- <AccountMenuMobile/> -->
-
+        <Toolbar :NavTitle="inNavTitle" />
         
+
         <v-content>
 
             <transition name="fade">
                 <router-view v-if="!menuOpen"/>
             </transition>
 
-            <!-- <Home/>
-            <HatPicks/> -->
-
         </v-content>
     </v-app>
 </template>
 
 <script>
-import HatPicks from './components/HatPicks';
-import MenuMobile from './components/MenuMobile';
-import AccountMenuMobile from './components/AccountMenuMobile';
 import Toolbar from './components/Toolbar';
-
-import { bus } from './main.js';
 
 export default {
     name: 'App',
     components: {
-        HatPicks,
-        MenuMobile,
-        AccountMenuMobile,
         Toolbar,
     },
     data () { return {
-        // NavTitle: 'Genius',
+        inNavTitle: 'Home',
         menuOpen: false,
     }},
     created() {
         this.$bus.$on('menuOpen', bool => {
             this.menuOpen = bool;
         });
+    },
+    watch: {
+        '$route' () {
+            this.inNavTitle = this.$route.meta.NavTitle;
+        }
     },
 }
 </script>

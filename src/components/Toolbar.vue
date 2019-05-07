@@ -25,7 +25,9 @@
                 <!-- <v-icon>more_vert</v-icon> -->
             </v-toolbar-side-icon>
 
-            <v-toolbar-title class="white--text">{{NavTitle}}</v-toolbar-title>
+            <transition name="fade">
+                <v-toolbar-title v-if="!(AccountMenuMobileActive || MenuMobileActive)" class="white--text">{{NavTitle}}</v-toolbar-title>
+            </transition>
 
             <v-spacer></v-spacer>
 
@@ -44,11 +46,9 @@
 import MenuMobile from './MenuMobile';
 import AccountMenuMobile from './AccountMenuMobile';
 
-import { bus } from '../main.js';
-
 export default {
     props: {
-        msg: String
+        NavTitle: String
     },
 
     components: {
@@ -56,8 +56,15 @@ export default {
         AccountMenuMobile,
     },
 
+    watch: {
+        '$route' () {
+            this.MenuMobileActive = false;
+            this.AccountMenuMobileActive = false;
+            this.$bus.$emit('menuOpen', false);
+        }
+    },
+
     data () { return {
-        NavTitle: 'Genius',
         AccountMenuMobileActive: false,
         MenuMobileActive: false,
     }},

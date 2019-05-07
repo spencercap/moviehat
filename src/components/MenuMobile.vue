@@ -6,8 +6,8 @@
         <div class="menuOptions">
             <router-link to="/Genius">Genius</router-link>
             <div class="option">Watchlists</div>
-            <div class="option">Community</div>
-            <div class="option">Discover</div>
+            <router-link to="/Home">Community</router-link>
+            <router-link to="/Home">Discover</router-link>
         </div>
         
         <div class="foot">
