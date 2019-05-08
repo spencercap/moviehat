@@ -33,7 +33,6 @@ export default {
 
     },
     mounted() {
-        
         this.actualHeight = window.innerHeight;
         this.$bus.actualHeight = window.innerHeight;
         window.addEventListener('resize', () => {
