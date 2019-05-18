@@ -12,6 +12,9 @@ https://material.io/tools/icons/
 https://vuetifyjs.com/en/components/icons
 
 
+## trakt movie db
+https://trakt.docs.apiary.io/#reference/users/add-list-items/add-items-to-custom-list
+
 
 ## Project setup
 ```
